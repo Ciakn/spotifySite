@@ -49,7 +49,7 @@ const MusicPlayer = () => {
 
   const handlePrevSong = () => {
     if (currentIndex === 0) {
-      dispatch(prevSong(currentSongs.length - 1));
+      dispatch(prevSong(49));
     } else if (shuffle) {
       dispatch(prevSong(Math.floor(Math.random() * currentSongs.length)));
     } else {

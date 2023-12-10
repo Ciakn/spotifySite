@@ -8,7 +8,6 @@ const initialState = {
   activeSong: {},
   genreListId: "",
 };
-console.log(initialState);
 const playerSlice = createSlice({
   name: "player",
   initialState,
@@ -36,7 +35,6 @@ const playerSlice = createSlice({
     },
 
     nextSong: (state, action) => {
-      console.log(state.currentSongs[action.payload], action.payload, "next");
       if (state.currentSongs[action.payload]) {
         state.activeSong = state.currentSongs[action.payload];
       } else {
@@ -48,8 +46,8 @@ const playerSlice = createSlice({
     },
 
     prevSong: (state, action) => {
-      if (state.currentSongs[action.payload]?.track) {
-        state.activeSong = state.currentSongs[action.payload]?.track;
+      if (state.currentSongs[action.payload]) {
+        state.activeSong = state.currentSongs[action.payload];
       } else {
         state.activeSong = state.currentSongs[action.payload];
       }

@@ -4,26 +4,37 @@ import PlayPause from "./PlayPause";
 import { playPause, setActiveSong } from "../redux/features/playerSlice";
 import { useState, useEffect } from "react";
 import defaultImg from "../assets/defaultImages/hanny-naibaho-aWXVxy8BSzc-unsplash.jpg";
-const SongCard = ({ key, song, index }) => {
+
+const SongCard = ({ isPlaying, activeSong, song, index, trackList }) => {
+  const dispatch = useDispatch();
+  const TrackList = trackList;
+ 
   const { track } = song;
-  console.log(track);
-  const activeSong = "test";
-  const ShowSomething = (s) => {
-    console.log(s);
-  };
+  // console.log(track);
+  // const ShowSomething = (s) => {
+  //   console.log(s);
+  // };
   const handlePause = () => {
-    
-  }
-   const handlePlay = () => {};
+    dispatch(playPause(false));
+  };
+  const handlePlay = () => {
+    dispatch(setActiveSong({ track, trackList, index }));
+    dispatch(playPause(true));
+  };
   return (
     <div className="flex flex-col w-[250px] p-4 bg-white/5 bg-opacity-80 hover:bg-black hover:bg-opacity-50   animate-slideup rounded-lg cursor-pointer">
       <div
-        onClick={() => ShowSomething(track)}
+        // onClick={() => ShowSomething(track)}
         className="relative h-56 w-full group flex justify-center items-center ">
         <div
-          className={`absloute inset-0 justify-center items-center   h-full w-full bg-opacity-50 group-hover:flex `}>
+          className={`absolute   inset-0 justify-center items-center  h-full w-full bg-opacity-50r group-hover:flex ${
+            activeSong?.name === track?.name ? "flex" : ""
+          }`}>
           <PlayPause
+            isPlaying={isPlaying}
+            activeSong={activeSong}
             track={track}
+            trackList={trackList}
             handlePause={handlePause}
             handlePlay={handlePlay}
           />

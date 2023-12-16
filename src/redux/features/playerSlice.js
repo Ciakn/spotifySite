@@ -13,19 +13,21 @@ const playerSlice = createSlice({
   initialState,
   reducers: {
     setActiveSong: (state, { payload }) => {
+      console.log(payload);
       const { index, track, trackList } = payload;
 
       state.activeSong = track;
       if (track?.preview_url) {
-        state.currentSongs = trackList.map((t, i) => {
+        state.currentSongs = trackList?.map((t, i) => {
+          console.log(t.track);
           return t.track;
         });
       } else if (track?.properties) {
-        state.currentSongs = trackList.map((t, i) => {
+        state.currentSongs = trackList?.map((t, i) => {
           return t.track;
         });
       } else {
-        state.currentSongs = trackList.map((t, i) => {
+        state.currentSongs = trackList?.map((t, i) => {
           return t.track;
         });
       }

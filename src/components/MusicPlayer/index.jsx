@@ -38,9 +38,10 @@ const MusicPlayer = () => {
 
   const handleNextSong = () => {
     dispatch(playPause(false));
-
+console.log(currentSongs);
     if (!shuffle) {
       console.log(currentSongs.length, currentIndex);
+      
       dispatch(nextSong((currentIndex + 1) % currentSongs.length));
     } else {
       dispatch(nextSong(Math.floor(Math.random() * currentSongs.length)));
@@ -58,7 +59,7 @@ const MusicPlayer = () => {
   };
 
   return (
-    <div className="relative sm:px-12 px-8 w-full flex items-center justify-between">
+    <div className="relative sm:px-12 px-8  w-full flex items-center justify-between">
       <Track
         isPlaying={isPlaying}
         isActive={isActive}

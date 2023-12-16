@@ -26,8 +26,8 @@ function Discover() {
   
   return (
     <div className="flex flex-col h-full ">
-      <div className="flex justify-center items-center sm:flex-row flex-col mt-4 mb-10">
-        <h2 className="text-bold text-white teext-3xl text-left">
+      <div className="flex justify-between  items-center md:flex-col flex-row  mt-4 mb-10">
+        <h2 className="text-bold text-white text-3xl text-left my-2">
           Discover {`POP`}
         </h2>
         <select

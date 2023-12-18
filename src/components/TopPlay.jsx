@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper";
 import PlayPause from "./PlayPause";
 import { useGetSpotifyTracksQuery } from "../redux/services/spotifyCore";
 import { playPause, setActiveSong } from "../redux/features/playerSlice";
+
 const TopChartCard = ({
   song,
   index,
@@ -78,7 +79,8 @@ const TopPlay = () => {
       className="xl:ml-6 ml-0 xl:mb-0 mb-6 flex-l xl:max-w-[300px] flex flex-col">
       <div className="w-full flex flex-col">
         <div className="flex flex-row justify-between items-end">
-          <h2 className="text-white font-bold text-2xl">top Charts</h2>
+          <h2 className="text-white font-bold text-2xl" id="top-charts
+          ">top Charts</h2>
 
           <Link to="/top-charts">
             <p className="text-gray-300 text-base cursor-pointer">
@@ -105,7 +107,7 @@ const TopPlay = () => {
       </div>
       <div className="w-full flex flex-col mt-1">
         <div className="flex flex-row justify-between items-end">
-          <h2 className="text-white font-bold text-2xl">top Artists</h2>
+          <h2 className="text-white font-bold text-2xl" id="top-artists">top Artists</h2>
 
           <Link to="/top-artists">
             <p className="text-gray-300 text-base cursor-pointer">

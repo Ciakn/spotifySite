@@ -28,7 +28,7 @@ const Sidebar = () => {
         <img src={logo} alt="logo" className="w-full h-14 object-contain" />
         <NavLinks />
       </div>
-      <div className="absolute md:hidden block top-2 right-4">
+      <div className="absolute md:hidden block top-2 right-0">
         {mobileMenuOpen ? (
           <RiCloseLine
             className="text-white  mr-2 w-6 h-6"

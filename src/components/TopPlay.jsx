@@ -24,7 +24,7 @@ const TopChartCard = ({
           alt="song"
         />
         <div className="flex flex-1 flex-col justify-center mx-3">
-          <Link to={`/songs/${index}`}>
+          <Link to={`/songs/${song.track.name}`}>
             <p className="text-white font-bold  text-sm"> {song.track.name}</p>
           </Link>
           <Link to={`/artists/${song.track.album.artists[0].name}`}>
@@ -114,20 +114,13 @@ const TopPlay = () => {
           </Link>
         </div>
         <div
-          slidesPerView="auto"
-          spaceBetween={15}
-          direction="vertical"
-          freeMode
-          centeredSlides
-          centeredSlidesBounds
-          modules={[FreeMode]}
           className="mt-4 flex justify-center items-center gap-4">
           {!isFetching &&
             topPlays.map((song, index) => (
               <SwiperSlide
                 key={index}
                 style={{ width: "15%", height: "auto" }}
-                className="shadow-lg rounded-full animate-slideright  ">
+                className=" rounded-full animate-slideright  ">
                 <Link
                   className="flex flex-col justify-center items-center gap-2"
                   to={`/artists/${song.track.album.artists[0].name}`}>
@@ -137,7 +130,7 @@ const TopPlay = () => {
                   />
                   <p className="text-white">
                     {" "}
-                    {song.track.album.artists[0].name}
+                    {song.track.album.artists[0].name.split(" ", 1)}
                   </p>
                 </Link>
               </SwiperSlide>

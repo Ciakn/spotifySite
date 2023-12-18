@@ -39,5 +39,6 @@ export const spotifyCore = createApi({
     }),
   }),
 });
+
 export const { useGetSpotifyTracksQuery } = spotifyCore;
 export const { useGetSpotifyArtistQuery } = spotifyCore;

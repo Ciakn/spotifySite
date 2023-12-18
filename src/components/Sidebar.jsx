@@ -24,14 +24,14 @@ const Sidebar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <>
-      <div className="md:flex hidden   flex-col w-[240px] py-10 px-4     bg-[#191624]">
+      <div className="md:flex hidden   flex-col w-[200px] py-10 px-4     bg-[#191624]">
         <img src={logo} alt="logo" className="w-full h-14 object-contain" />
         <NavLinks />
       </div>
-      <div className="absolute md:hidden block top-6 right-3">
+      <div className="absolute md:hidden block top-2 right-4">
         {mobileMenuOpen ? (
           <RiCloseLine
-            className="text-white mr-2 w-6 h-6"
+            className="text-white  mr-2 w-6 h-6"
             onClick={() => setMobileMenuOpen(false)}
           />
         ) : (

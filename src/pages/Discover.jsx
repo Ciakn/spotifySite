@@ -23,7 +23,6 @@ function Discover() {
     return <Loader title="Loading songs..." />;
   if (error) return <Error />;
   const { tracks } = items;
-  
   return (
     <div className="flex flex-col h-full ">
       <div className="flex justify-between  items-center md:flex-col flex-row  mt-4 mb-10">
@@ -43,7 +42,7 @@ function Discover() {
           })}
         </select>
       </div>
-      <div className="flex flex-wrap sm:justify-start justify-center  mt-5 gap-8">
+      <div className="flex flex-wrap sm:justify-start justify-center  mt-5 sm:gap-2  gap-1">
         {items.map((song, index) => (
           <SongCard
             key={song?.track?.name}
